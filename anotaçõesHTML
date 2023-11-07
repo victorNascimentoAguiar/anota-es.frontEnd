@@ -1,0 +1,260 @@
+HTML 
+estrutura inicial  html:
+
+<!DOCTYPE html> <!--essa tag informa que esse é um arguivo html-->
+<html> <!--raiz do documento-->
+    <head></head> <!-- contem informações da sua pagina mais não ira aparecer nela
+    ela contera coisas como links, titulos de pagina ,links de fontes entre outras tags-->
+    <body></body><!--body contem todo o conteudo que vai estar aperente dentro da pagina-->       
+</html>
+
+SINTAXE
+tags--
+<p>bla bla bla</p><!--criação de paragrafos-->
+<pai>
+    <filho> esta tag está dentro de outra tag</filho>
+</pai><!--tags tambem podem ter heranças -->
+
+INDENTAÇÂO ADEQUADA
+ <body>
+    <h1>aqui temos um titulo</h1><!--utilizado normalmente para titulos-->
+    <p> paragrafos--</p><!--<p> utilizado para paragrafos-->
+ </body> 
+ 
+ TITULOS
+as tags de títulos são representadas em até seis níveis. <h1> é o nivel mais alto e <h6> é o mais 
+baixo.Quanto maior for o nivel da tag maior vai ser o tamanho da fonte apresntada na tela sua importância no SEO
+
+ex:
+<h1> Titulo do h1 </h1>
+<h2> Titulo do h2 </h2>
+<h3> Titulo do h3 </h3>
+<h4> Titulo do h4 </h4>
+<h5> Titulo do h5 </h5>
+<h6> Titulo do h6 </h6>
+
+Textos 
+<p></p> - paragrafos
+<span></span> - utilizado para agrupar pequena informaçã
+<b></b> - deixa em Negrito
+<i> - deixa em italico
+<hr> - cria uma linha horizontal
+<strong> adiciona importância (SEO) no texto.
+
+    IMAGEM 
+
+    <img src= "nome da pasta/nomeDoArguivo.formato"
+    alt="descrição sobre a imagem"
+    />
+
+    AUDIO
+    <audio controls>
+        <source src="arguivo.mp3" type="audio/mpeg"/>
+    </audio>
+ src - url ou nome do arguivo do áudio a ser reproduzido
+ type - Formato de arguivo de áudio.
+
+    VIDEO - suporta MP4,WebM e OGG
+
+    <video width= "360" controls>
+        <source src="video.mp4" type="video/mp4"/>
+    </video>
+
+    height - define a altura do player de vídeo
+    width - define a largura do player de vídeo
+
+    IFRAME- renderiza outra página ou recurso HTML em uma página.
+    e comumete usado para incorporar uma pagina HTML ou um documento PDF.
+
+    <iframe src= "https:// www.iuricode.com/efront"
+    style="width: 100%; height: 350px;">
+    </iframe>
+
+    CANVAS -  cria um container onde os gráficos podem ser desenhados com
+    JavaScript
+
+    <canvas id="jogo" width="400" height="250">
+        opa,ocorreu um erro !
+    </canvas>
+    canvas é uma boa escolha para desenvolvimento de jogos com uso 
+    intensivo de gráficos, então se deseja criarr um jogo em JavaScript a utilização da tag <canvas> será essencial.
+    
+    DIV - utilizada para dividir elementos para fins de estilos(usando class ou id).
+    Ele deve ser utilizado somente quando não tiver outro elemento de semântica.
+
+    <div>
+        <p>entrou dentro de uma div</p>
+    </div>
+
+    LINK - tag <a> = hiperlink 
+
+    <a href= "www.youtube.com/505">musica </a>
+
+    COMENTARIO
+    <!--assim que faz um comentario em HTML-->
+
+    TABELA-principal para crianção de tabelas mais precissa de 
+    mais tags dentro para funcionar
+    <table></table>
+    
+    --TR--linhas da tabela
+    <tr> </tr>
+    --TH--utilizada para inserir um cabeçalho na tabela
+    <th></th>
+    --TD-- colunas da tabela 
+    <td></td>
+    --outras tags da tabela
+    >Definindo a legenda de uma tabela: <caption>
+    >criando um rodapé:<tfoot>
+    >especifica um grupo de uma ou mais colunas em uma tabela para formatação
+    <colgroup>
+    >agrupa o conteudo do cabeçalho em uma tabela: <thead>
+    >agrupa o conteudo do corpo em uma tabela: <tbody>
+    >agrupa o conteudo dp rodape em uma tabela: <tfoot>
+
+    ex simples tabela:
+
+    <table>
+        <tr>
+            <th>nome</th>
+        </tr>
+        <tr>
+            <td>victor</td>
+        </tr>
+    </table>
+
+    LISTAS
+    <li> -- representa um item que faz parte de uma lista
+    este item deve estar contido em um elemento pai
+
+    lista ordenada <!--<ol>--> -- numera os items da lista
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>React</li>
+        </ol>
+    lista desordenada <!--<ul> -->
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>React</li>
+        </ul>
+    
+    FORMULARI
+        elementos utilizados para construção de um formulario
+        <form>,<label>,<input>,<textarea> e <button>
+        
+    --FORM-- define um formulário e os seus atributos definem
+    a maneira como esse formulário se comporta.
+
+    <form action = "/" method="post"></form>
+
+    --LABEL-- é a meneira formal de definir um rótulo. Esse elemento é importante para acessibilidade
+    quando implementados corretamente, os leitores de tela falarão o rótulo de um elemento de formulario
+    juntamente com as instruções relacionadas
+    
+    <label>nome:</label>
+
+    --input-- é usado para criar controles interativos que recebe dados do usuario.
+    A semântica de um <input> varia consideravelmente dependendo do valor de seu atributo type.
+
+    <input type="email"></input>
+
+    outros valores possiveis para o TYPE:
+    type="button"-- um botão sem comportamento padrão
+    type="checkbox"-- uma caixa de marcação
+    type="color"-- um controle para especificar cores
+    type="date"--um controle pra inserir uma data
+    type="email"-- um campo para editar um endereço de e-mail
+    type="file"--um controle que permite o usuario selecionar um arguivo
+    type="password"--um campo de senha cujo valor é ocultado
+    type="search" --um campo com uma só linha para digitar termos de busca
+
+    --fieldset-- agrupar elementos em um formulário
+    <fieldset> </fieldset>
+    
+    --legend-- representa um rótulo para o conteudp do
+    <!--<fieldset>-->
+    <legend>contato</legend>
+    
+    EX de um formulario completo :
+    
+    <form action="/" method="post">
+        <label>Nome:</label>
+        <input type="text"/>
+        <label>Email:</label>
+        <input type="email">
+        <input type="submit" value="Enviar"/>
+    </form>
+
+    TAGS SEMÂNTICAS
+
+    elementos não semanticos <div> e <span>;
+    elementos semanticos <form>,<table>,<nav>,<aside>
+    ,<article>,<footer>,<section>,<Main>, etc;
+    FOOTER--usado como rodape da pagina
+        <footer> SOU O RODAPÈ</footer>
+
+    SECTION--utilizada para marcar as seções de conteúdo de uma pagina
+    com esse elemento agrupamos de forma logica nosso conteudo separando
+    as imformações em áreas diferentes.
+    <section></section>
+    
+    ARTICLE-- Representa uma compodição independente um documento
+    isso poderia ser um simples card um artigo de revista ou jornal,
+    ou post de um blog .
+    para um melhor SEO a tag <article> precisa de um título(<h1>--<h6>) acompanhado.
+    <article></article>
+    
+    ASIDE-- representa uma seção de uma página que consiste de conteúdo que podeira ser considerado
+    separado do conteúdo principal.essas seções são,muitas vezes, representadas como barras laterais.
+    <aside></aside>
+
+    HEADER--(cabeçalho) representa um container para conteúdp introdutório
+    (muitas vezes usado na primeira seção da pagina).
+    <header></header>
+
+    NAV-- representa uma seção de uma pagina que aponta para outras páginas ou para outras áreas
+    da pagina, ou seja uma seção com grupos de links de navegação.
+    <nav></nav>
+
+    MAIN-- define o conteúdo procipal da página.Ele representa o conteudo central da pagina o mais importante
+    é importante usar apenas uma vez esse elemento por arguivos HTML criado.
+    <Main></Main>
+    
+    META TAGS
+    SEO (search engine optmization) é o conjunto de técnicas responsáveis por fazeer com que determinada página de um site apareça nas primeiras páginas do google
+    quanto melhor for o SEO de um site, maiores as chancer de que a página apareça logo de cara para quem pesquisa por determinado assunto.
+
+    A tag <meta> define metadados(informações) sobre um documento HTML. As tags <meta> sempre vão dentro do elemento <head> e normalmente sãom usados para especificar 
+        o conjunto de caracteres, descrição de pagina,palavras-chaves, autor do documento e configurações da janela de visualização.
+        
+        > os metadados não serão exibidos na página, mas podem ser analisados por máquina.
+        >os metadados são usados por navegadores,mecanismos de busca e outros serviços da web.
+
+    
+    TITLE--define o titulo do documento.Mostrado na aba da pagina no navegador
+
+    <title>nome generico aq</title>
+
+    DESCRIPTION--contém a descrição do conteúdo da página,
+    varios navegadores usam esta meta como descrição padrão da pagina quando é marcada.
+
+    <meta name="description"
+    content="descrição da pagina"/>
+
+    CHARCER--define a coficação de caracteres usados na página.O conjunto de caracters UTF-8 
+    cobre quase todos os caracteres e símbolos do mundo. sempre tenha ele em suas paginas.
+
+    <meta charset="UTF-8">
+
+    KEYWORDS-- keywords é uma meta de palavras-chaves associadas ao conteúdo da página,contendo strings separadas por vírgulas.
+    
+    <meta name="keywords" content="css,html,js">
+    
+    AUTHOR-- define o nome do autor do documento.
+
+    <meta name="author" content="Victor">
+    
