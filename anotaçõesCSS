@@ -1,0 +1,221 @@
+CSS-(Cascading Style Sheets ou
+Folhas de estilo em cascata)
+
+LINKAR COM HTML
+<link rel="stylesheet" href="styli.css">
+
+SINTAXE
+-indicar um seletor(pela tag,id ou class)
+e dentro das chaves enserimos os comandos referente à formatação,
+que são as propriedades e valor.
+EX:
+seletor{
+    propriedade : valor 
+}
+COMENTARIOS 
+div{
+/* aqui fica seu comentario */
+}
+
+VARIAVEIS
+elas são configuradas usando esta notação:
+
+:root {
+    --cor: black;
+}
+O :root se equipara à raiz de uma árvore,que representa o documento.
+
+e são acessadas usando a função var():
+
+H1{
+    var(--cor);
+}
+
+APLICANDO FONTES
+site para ascessar as fontes : google Fonts
+duas maneiras de adiconar a fonte :
+
+><link> importa a fonte para o HTML
+no html importe o codigo copiado do google fontes direto para o head do HTML
+
+>@import importa para a fonte para o CSS
+ja no CSS faça assim :
+* {
+    font-family:"nome da fonte aqui"
+}
+
+* > esse simbolo normalmente é utilizado para quando for usar algo em todo seu CSS.
+Como nesse caso da fonte onde a fonte selecionada vai estar em todo o codigo.
+
+RESET- desfazer os padrões dos navegadores.
+por padrão nossos sites tek um espaçamento em volta da paginas
+para tirar usamos duas coisas:
+>padding (espaçamento dentro do conteúdo) 
+>margin (espaçamento fora do conteúdo).
+zeramos os dois.
+tambem colocamos o comando box-sizing : border-box
+importante para a criação de elementos que tem como padrão um tamanho de 300px
+
+
+body{
+    padding: 0;
+    margim: 0;
+    box-sizing: border-box;
+}
+
+UNIDADES DE MEDIDAS 
+medidas absolutas: são as mais comuns utilizadas no CSS
+PX 
+medidas relatica: é mais apropriado para que possamos fazer ajustes em diferentes dispositivos garantindo um layout consistente
+e fluido em diversas mídias.
+
+PX-- tem suas disvantagens quando utilizadas em textos 
+definir o tamanho de um texto em pixels tras a disvantagem de que o texto não vai alterar de tamanho quando der um zoom no dispositivo movel ou no computador mecanismos
+por isso são considerados medidas absolutas.
+EX:
+h1{
+    font-size:18px;
+}
+REM-- é uma medida escalável que varia de tamanho de acordo com a dimensão root do navegador
+por padrão o 1REM equivale 16px,podendo varias se o tamanho da fonte raiz for alterado.
+EX:
+h1{
+    font-size: 1rem; //igual a 16px
+}
+
+existem algumas dificuldades quando usamos o rem que no caso seria que 1 rem equivale a 16 PX
+mais como faria para que consequisse obter um tamanha de 10px
+truque: consiste em mudar o valor do font-size do html para 62.5%
+que seria igual a 10px dessa forma 1rem = 10px 
+dessa forma basta dicidir o valor em pixel por 10 e se obterá o valor em rem 
+exemplo : 1.2rem = 12px 2.6rem = 16px,5.6rem= 56px.
+EX:
+HTML{
+    font-size: 62,5%;
+}
+h1{
+    font-size:2.6rem; /* equivale a 26px*/
+}
+
+CORES
+RGB e HEX são duas formas de composição de cores.
+
+RGB-mistura cores para obter uma outra cor comom resultado, você faz a mesma coisa comom o RGB.
+sintaxe do RGB utiliza três cores iniciais 
+R ed
+G reen
+B lue
+onde o valor maximo de todas as cores é de 255 e o minimo é 0
+EX:
+h1{
+    color: rgb(255,200,10);
+}
+
+graças ao formato RGBA (RED,GREEN,BLUE,ALPHA)
+podemos adicionar opacidade no fomato RGB.
+EX:
+h1{
+    color: rgba{255,200,10,0.4};
+}
+alpha adefini a opacidade como um número entre 
+0,0 (totalmente trasparente)
+1 (totalmente opaco).
+
+HEX-ou hexadecimal tem uma sixtaxe muito mais curta que o RGB.O código hexadecimal
+consciste em seis letras ou números precebidos por um "#".
+os primeiros dois Valores representam a intensiade do vermelho terceiro e quarto a intensidade de verde
+e os dois últimos a intensidade de azul.
+EX:
+h1 {
+    color: #00ff00;
+}
+SELETORES
+mais e sé eu tiver dois elementos <p> e so quiser alterar um deles como faço para que apenas um deles seja alterado 
+
+normalmete são utilizados um desse metodos 
+Id ou class para selecionar um elemento por vez:
+Class : são uma forma de indentificar um grupo de elementos através delas,pode-se atribuir formatação a vários elementos de uma vez.
+ID:é uma forma de indentificar um elemento, e devem ser única para cada elemento.Através dele,pode-se atribuir formatação a um elemento.
+Através dele, pode-se atribuir formatação a um elemento em especial.
+
+para usar uma classe usamos um "."(ponto)logo em sequida o nome da classe
+e no caso do Id uma "#"(hashtag) no começo e depois o nome da classe.
+EX:
+.souClass{
+    color:#foo;
+}
+
+no HTML ficara assim com classe ou id
+
+<p class="souClass">sou um elemento com class</p>
+<p id="souID">sou um elemento com ID</p>
+
+OUTROS SELETORES- três formas de selecionar tags, ID e classes
+
+selecionar o primeiro parágrafo que vem exatamente após a div:
+div + p{
+    color: #f00;
+}
+
+selecionar todos os elementos <p> com a class "victor"
+    p.victo{
+        color:#f00;
+    }
+seleciona todos os parágrafos que são filhos diretos da div:
+div > p {
+    color:#f00;
+}
+
+PREENCHIMENTOS 
+As propriedades de preenchimento CSS são usadas para gerar epaço em torno ou dentro do conteúdo.
+
+PADDING
+>a propriedade padding é usada para gerar espaço em torno do conteúdo.
+o padding "limpa" uma área ao redor do conteúdo (dentro da borda) de um elemento.
+
+MARGIN
+>A propriedaded margin defini o tamanho do espaço de fora da borda. O margim é usado para gerar espaço em torno do elemento.
+
+Resumindo: Padding é o espaço entre o conteúdo ea borda, enquanto margin é o espaço fora da borda
+
+|-------------------------------------------|
+|margim                                     |
+||-----------------------------------border||
+||padding                                  ||    
+||-----------------------------------------||
+||conteudo                                 ||
+||-----------------------------------------||
+||-----------------------------------------||
+|-------------------------------------------|
+
+elas podem ser aplicadas nos quattro lados de um elemento: superior,direita,inferior e esquerda (nessa ordem).
+
+EX: nesse exemplo também pode ser utilizado o padding
+
+.class{
+    margin: 20px;
+}
+aplicando uma margin superior e inferior de 5px  e margim esquerda e direita de 10px:
+
+.class{
+    margin: 5px 10px;
+}
+
+tambem pode definir os espaços individualmente , mas lembre-se sempre da ordem que é:
+TOP,RIGHT,BOTTOM e LEFT;
+superior,direita,inferior,esquerda.
+
+.class{
+    margin: 0px 5px 10 px 15px;
+}
+
+DISPLAY
+A maoria dos elementos tem seu display configurado em block ou inline
+
+BLOCK-- o elemento block, não aceita elementos na mesma linha que ele,ou seja,quebrar a liinha após o elemento, e sua área ocupa toda a linha onde ele é inserido.
+alguns elementos que têm como padrão block:<div>,<h1> até<h6>,<p>,<form>,<header>,<footer>,<section>,<table>.
+
+INLINE-- O elemento não inicia em umma nova linha nem quebra de linha após o elemento,pois ele ocupa somente o espaço de seu conteúdo.
+alguns elementos que têm como padrão inline: <span>,<a>,<img>.
+
+POSITION
