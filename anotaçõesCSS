@@ -219,3 +219,252 @@ INLINE-- O elemento não inicia em umma nova linha nem quebra de linha após o e
 alguns elementos que têm como padrão inline: <span>,<a>,<img>.
 
 POSITION
+Específica como um elemento será posicionado na tela,
+podemos até posicionar em um ponto específicp controlando com os parâmetros top,right,botton e left.
+
+São quatro tipos de posicionamento disponíveis: static, relative, fixed e absolute.
+A única configuração que não permite escolher um posicionamento para o elemento é static.
+
+TOP-Desloca o elemento na vertica(Y),o valor é a distância do elemento com  o topo.
+RIGHT-Desloca o elemento na horizontal(X),o valor é a distância do elemento com  a borda da direita.
+BOTTOM-Desloca o elemento na vertica(Y),o valor é a distância do elemento com a borda inferior.
+LEFT-Desloca o elemento na horizontal(X), o valor é a distância do elemento com a borda esquerda.
+
+STATIC-- este valor é padrão HTML e não pde ser movido por TOP,RIGHT,BOTTON,LEFT.
+
+RELATIVE-- um elemento com relative tem seu posiconamento relacionado com o elemento anterior.
+
+ABSOLUTE-- Um elemento com absolute tem seu posicionamento relacionado com o elemento pai e não com o elemetno anterior,desta maneira elementos
+anteriores não irão afetar seu posicionameno.
+
+FIXED-- ele tem o msm comportamento do absolute mas quando der uma rolagem na tela ele continuara estatico 
+
+EX:
+.elementoFilho{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+EX2: 
+.elementoPai{
+    position: relative;
+}
+
+.elementoFilho{
+    position: absolute;
+    bottom: 0;
+    right:0;
+}
+
+como fica esse codigo no HTML: 
+<body>
+    <div class="elementoPai">
+        <div class ="elementoFilho"></div>
+    </div>
+</body>
+
+FLEXBOX 
+Responsavel por organizar o conteúdo dentro do espaçp que ela possui.
+Facilitando, assim, a implementação de sites responsivos.
+
+CONTAINER PAI
+>Dá aos filhos
+.Direção
+.Justificação
+.Alinnhamento 
+
+ELEMENTOS FILHOS
+>Pome sozinhos
+.se ordenar
+.se alinhar individualmente
+
+JUSTIFY-CONTENT-- Define como o navegador destribui o espaço entre e ao redor dos itens ao longo do eixo principal de um container flexíve.
+A propriedade só terá efeito se a mesma tiver com a propriedade display flex.
+
+EX:
+
+.elementoPai{
+    display: flex;
+    justify-content:flex-start;
+}
+
+FLEX-START (PADRÂO)-- Os items são alinhados no começo do eixo principal.Como pode ver no exemplo anterior colocamos "justify-content;" no elemento pai.
+
+FLEX-END-- Os items são alinhados no final do eixo principal.
+
+FLEX-CENTER -- Os items são alinhados no meio do eixo principal.
+
+SPACE-BETWEEN-- os items ficam alinhas no começo meio em fim 
+da horizontal da pagina.
+
+SPACE-AROUND--Pega todo o espaço que sobrar na linha e distribui igualmente entre os elementos, deixando o espaço igual em toda a linha do eixo principal.
+
+SPACE-EVENLY-- O espaço é distribuido igualmente entre cade elemento, ou seja, um ao lado do outro, com exceção do primeiro e último do eixo principal .
+
+ALIGN-ITEMS-- ele faz a mesma coisa que o JUSTIFY-CONTENT mas enquanto o justify-content faz isso na vertical o
+align-items alinha os elementos na vertical.
+
+EX:
+
+.elementoPai{
+    display:flex;
+    align-items : flex-start;
+
+}
+
+FLEX-START-- a mesma coisa que o de cima so que na vertical
+FLEX-END-- a mesma coisa que o de cima so que na vertica.
+
+STRETCH-- Os items se estenderão por todo o eixo.
+
+CENTER--Os itens são alinhados no meio do eixo
+
+BASELINE-- Alinha os itens de acordo com a linha base da tipografia.
+
+OUTRAS PROPRIEDADES : https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout
+link com mais propriedades.
+
+EX aplicação real FLEX :
+
+nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+RESPONSIVIDADE
+Sites responsivos são aqueles que adaptam o tamanho das suas páginas 
+ao tamnho das telas que estão sendo exibidos,como as telas de 
+celulares,tablets e televisões (como netflix e o youtube).
+
+mormalmente para aplicar responsividade é utilizado frameworks e media queries,
+que ja estão prontas  e agilizam o processo
+
+existem no meio disso os media Types que definem para que tipo de media um certo código CSS
+Será aplicado.
+
+MEDIA TYPE-- os mais utilizados são esses:
+
+all: usado para todos os dispositivos de tipo de mídia.
+print: usado para impressoras.
+screen:usado para telas de computadores,tablets,smartphone e etc.
+speech:usado para leitores de tela que "leem" a página em voz alta
+
+COMO UTILIZAR 
+EX a pagina ficara roxa se a janela de visualização tiver 480 pixels de largura ou menos,
+
+@media screen and (max-width: 480px){
+    body{
+        background-color: #00ff00;
+    }
+}
+
+CSS GRID 
+É um sistema de estruturação de layout. a diferença dele pro Flexbox é que ele nos permite configurar layouts em duas dimensões
+(linhas e colunas)sendo que no Flexbox é apenas uma dimensão.
+
+GRID CONTAINER--Para criar um utilizamos a propriedade display: grid(ou display: inline-grid
+para torna o elemento um grid container porém com comportamento inline).
+Assim declarando, todos os elementos filhos diretos daqueles container se trasformam em grid items.
+EX 
+CSS
+.container{
+    display: grid;
+}
+HTML
+<div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+isso irá criar uma grid do tipo block,significando que o container irá
+ocupar a linha inteira.
+
+GRID-TEMPLATE-COLUMNS-- Para criar colunas, usaremos a propriedade grid-template-colums,
+que recebe os valores de tamanho de cada coluna separados por espaço.
+Iremos,por exemplo criar duas colunas com 200px cada EX:
+
+.container{
+    display:grid;
+    grid-template-colums: 200px 200px;   
+}
+
+tambem pode criar uma coluna com espaço fixo e a outra ficar com o resto do  espaço
+
+.container{
+    display: grid;
+    grid-template-colums : 200px 1fr;
+
+}
+
+GRID-TEMPLATE-ROWA- exatamente da msm maneira 
+so que utilizando grid-template-rows
+EX:
+.container{
+    display:grid;
+    grid-template-colums: 200px 1fr;
+    grid-template-rows: 200px 100px;
+}
+
+GRID-TEMPLATE-AREAS--pode indicar cada area no HTML para mexer nelas separadamente
+
+EX:
+
+<div class="container">
+    <div class= "item header">Header</div>
+    <div class= "item sidenav">sidenav</div>
+    <div class= "item main">main</div>
+    <div class= "item footer">Footer</div>
+</div>
+
+para cada items declaramos usando GRID-TEMPLATE-AREAS--pode
+
+
+.header{
+    grid-area:header;
+}
+.sidenav{
+    grid-area:sidenav;
+}
+.main{
+    grid-area:main;
+}
+.footer{
+    grid-area:footer;
+}
+Para dar nomes às áreas de uma mesma linha, escrevemos dentro de"" (aspas).
+Ao abrir novas aspas estaremos indicando que estamos indo para a linha sequinte.
+
+.container{
+    grid-template-areas: "header header"
+                         "sidenav main"
+                         "footer footer";
+}
+No código acima, repetimos header e footer duaz vezes porque declaramos duas colunas
+e queremos que eles ocupem as duas.
+
+.container{
+    display:grid;
+    grid-template-columns: 30% 60%;
+    grid-template-rows: 30px 80px 20px;
+    grid-template-areas: "header header"
+                         "sidenav main"
+                         "footer footer";
+}
+GRID-AUTO-ROWS--nem sempre um container vai ser previsivel.
+
+Para controlar o grid explícito, podemos a propriedade grid-autp-rows
+para definir como o nosso grid implícito será dispostp.
+
+.container{
+    display: grid;
+    gap:10px;
+
+    /*grid explícito*/
+    grid-template-columns: 2fr 1fr;
+    grid-autp-rows: 100px 100px 100px;
+    /*grid implícito*/
+    grid-auto-rows: 100px;
+}
+com o uso do grid-auto-rows definimos que agora todas as linhas terão 100px de tamanho
+grid-auto-rows aceita mais que um valor de medida
