@@ -1,0 +1,124 @@
+JAVASCRIPT 
+JS é uma linguagem de programação,sendo a principal linguadem do frontend.ela é
+responsavel pelo dinamismo de uma página, ou seja, promove a interação ccom o usuário.Um exemplo clássico
+de javaScript são os menus mobile , quando clicamos nele é feito uma interação com o usuário(no caso abrindo os items do menu).
+
+INICIANDO
+criar um arguivo com o nome que você quiser mas com ".js" no final do nome.
+
+criando conexões com HTML usando o javaScript
+antes de fechar a tag body do HTML abrimos a tag scrip para conectar os dois 
+na tag script colocamos o atributo src = ""(em inglês source),esse atributo é responsavel em fazer a conexão com outros arguivos.
+
+VARIAVEIS 
+No js não é necessario a declaração de variaveis mais isso não significa que ele não tem um tipo
+isso torna o JS uma linguagem de tipagem dinamica.
+
+na declaração de variavies em JS voce pode declaram um elemento como nome = "victor"
+e logo em sequida declarar que nome= 10
+isso para o JS não esta errado mais tem seus problemas.
+EX:
+
+let nome = "victor"
+nome = 10;
+//terminal resultado de nome no final sera 10
+
+COMENTARIOS EM JS
+e usado barras duplas para declarar que uma linha é um comentario "//"
+também pode ser utilizado "/* para começar um comentario e */para terminar"
+assim podemos comentar varias linhas de um vez.
+
+para que usamos o LET no código ?
+
+para declarar uma variavel em JS usamos três opções:
+> VAR
+Uma variávek=l declarada como var possui o que chamamos de escopo de função. Isso significa que se criarmos uma variável
+deste tipo dentro de uma função, você pode modificar em qualquer
+parte desta função, mesmo se criar outra função dentro dela.
+> LET
+Diferente de var, declarar como let leva em conta o bloco
+de código onde foi declarada.Isso significa que se a declararmos
+dentro de um uma função,ela será "enxergada" apenas dentro deste escopo.
+> CONST
+Uma variável const é usada para definir uma constante.
+Diferente de var e let, as variáveis de connst não podem ser 
+atualizadas nem declaradas novamente.
+
+VAR
+
+function exibirNome(){
+    var nome = "victor";
+
+}
+console.log(nome); // erro: nome não está definido
+
+LET
+
+let nome = "victor";
+if(true){
+    let nome = "guts";
+    console.log(nome); //retornará "guts"
+}
+console.log(nome); // retornará "victor"
+
+/*isso não é um erro porque as dusa instâncias são tratadas como variáveis diferentes, já
+que são de escopos diferentes.*/
+
+CONST
+
+const nome = "victor";
+nome = "guts";
+//erro: atribuição a uma variável constante.
+
+TIPOS DE variáveis
+
+STRING-- tipi texto normalmente quando vamos declarar que algo é uma string colocamos 
+""(aspas duplas ) ou ''(aspas simples) mas normalmente são utilizadas as aspas duplas ""
+
+var nome = "victor";
+//ou
+var nome = 'victor';
+
+
+NUMBER
+Number é um tipo de dado numérico. O JacaScript não diferencia
+números inteiros, em ponto flutuante, double....
+
+var numero = 10;
+var pi = 3,14;
+
+BOOLEAN
+tipo boolean é um tipi logico que pode apenas ter dois valores
+True (verdadeiro) ou False (falso).
+
+var javascript = true;
+var java = false;
+
+OBJECT
+tipos de dados especiais que podem armazenar vários
+valores ao mesmo tempo.
+
+var pessoa = {
+    nome: "victor",
+    idade : 20,
+    frontend: true,
+};
+
+FUNCTION
+Uma função é um conjunto de instruções que executa uma tarefa ou calcula um valor.
+
+function nome(){
+    console.log("victor")
+}
+
+UNDEFINED
+Uma variável que não foi atribuida a um valor específico, assume o valor
+undefined(indefinido).
+
+var texto
+
+NULL 
+UM valor vazio nullo
+(exemplo que aponta para um objeto inexistente).
+
+var texto = null;
