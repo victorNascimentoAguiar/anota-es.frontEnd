@@ -122,3 +122,186 @@ UM valor vazio nullo
 (exemplo que aponta para um objeto inexistente).
 
 var texto = null;
+
+
+OPERADORES
+simbolos especiais com finalidade de produzir um determinado resultado
+
+os operadores mais utilizados:
+>operadores de atribuição:
+. "atribui um valor ao operando à sua esquerda baseado no valor do operando à direita. O operador de atribuição 
+básica é o igual (=), que atribui o valor do operando à direita ao operando à esquerda.isto é, X=y atribui o valor de y a x."-
+MDN web Docs
+
+operador                operador encurtador 
+
+atribuição                      x=y
+atribuição de adição            x+=y
+atribuição de subtração         x-+y
+atribuição de multiplicação     x*=y
+atribuição de divisão           x/=y
+atribuição de resto             x%=y
+
+OPERADORES ARITMÉTICOS 
+"Toman valores numéricos como seus operandos e retornam um único valor numérico.Os operadores aritméticos padrão são os de soma(+),
+subtração(-),multiplicação (*), e divisão (/).
+Estes operadores trabalham da mesma fomra como na maioria das linguagens de programação quando utilizados com números" - MDN Web Docs
+
+operador        descrição 
+
+módulo(%)       Retorna o inteiro restante da divisão dos dois operadores.
+incremento(++)  adiciona um ao seu operando.
+decremento(--)  subtrai um de seu operando.
+negação (-)     Retorna a negação de seu operando.
+adição (+)     tenta converter o operando em um número.
+
+OPERADORES DE COMPARAÇÃO
+"compara seus operandos e retorna um valor lógico baseado em se a comparação é verdadeira.
+Na maioria dos casos,se dois operandos não são do mesmo tipo, o JS tenta convertêlos para 
+um tipo apropriado.Isto geralmente resulta na realização de um comparação numérica."- MDN Web Docs
+
+operador                Dercrição
+
+igual(==)                   Retorna true caso os operandos sejam igauis.
+Não igual (!=)              retorna true caso os operandos não sejam iguais.
+estritamente igual(===)     retorna true caso os operandos sejam iguais e do mesmo tipo.
+estritamente não igual(!==) retorna true caso os operandos não sejam iguais e do mesmo tipo.
+maior  que(>)               retorna true caso o operando da esquerda seja maior que o da direita.
+menor que (<)               retorna true caso o operando da esquerda seja menor que o da direita.
+maior ou igual que (>=)     retorna true caso operando da esquerda seja maior ou igual ao da direita.
+menor ou igual que (<=)     retorna true caso o operando da esquerda seja menor oi igual que o da direita.
+
+DECLARAÇÕES CONDICIONAIS 
+São utilizadas para verificar uma condição e definir se algo deve ou não acontecer.
+
+são representados no JS como estrutura condicional IF (se) da sequinte maneira:
+
+if(condicao) {
+    //o código será executado caso a condição
+    // seja verdadeira
+}
+
+DECLARAÇÕES CONDICIOAIS 
+caso queira executar algo quando a condição for falsa,
+utilizamos o else (se não).O else sempre será executado caso o if seja
+falso.
+
+if(condicao){
+    //será executada caso a condição seja verdadeiro    
+}else{
+    //será executado caso a condição seja falso
+}
+
+else id (se não se) nos ajuda a fazer mais do que uma condição, ou seja 
+se a condição anterios não for verdadeira verifique uma nova condião.
+
+if(condicao){
+    //será executada caso a condição seja verdadeiro
+}else if(condicaoDois){
+    //sera executado caso a primeira condição seja falsa
+}else{
+    //será executado caso todas as condições sejam falsas
+}
+
+FUCTION
+Uma função, ou function é um conjunto de intruções que executa uma tarefa.
+
+a definição função (também chamada de declaração de função)
+consiste no uso da palavra-chave function,sequida por:
+
+.Nome da função.
+.Lista de argumentos para função entre parênteses e separados por vírgulas.
+.Declarações JavaScript que definem a função, etre chaves{}
+
+ex função simples chamada somar:
+
+function somar(numero){
+    return numero * numero;
+}
+console.log(somar(10));
+
+OBJECT
+É uma coleção de propriedades, sendo cada propriedade definida como uma sintaxe de chave: valor. A chave pode ser uma string e o valor pode ser qualguer informação
+
+const pessoa = {
+    nome: "victor",
+    idade: 20,
+};
+
+Para acessar uma propriedade de um objeto, use uma das duas notações(sintaxes):
+
+.Notação de ponto (objeto.propriedade).
+.notação de array (objeto["propriedade"]).
+
+pessoa.nome; //resultado: victor
+pessoa["nome"]; // resultado : victor
+
+ARRAY
+array, ou matrizes são lista de objets.Elas são objetos que contêm
+múltiplos valores armazenados em uma lista.
+
+arrays são construidos de colchetes, os quais contém uma lista de itens separada por vírgulas.
+
+EX supondo que queremos armazenar a nossa lista de frutas, nós temos
+om sequinte código.
+
+var frutas = ["banana","maçã","uva","kiwi"];
+
+pode acessar itens individuais em um array usando a notação de colchetes, da mesma forma que você acessa as letras em string.
+
+frutas[2];
+
+obs: o índice do array sempre começa na posição 0.
+
+MÉTODOS DE ARRAY
+alguns métodos array :
+>concat()-- serve para concatenar dois arrays, no exemplo vamos concatenar o array front com o array back
+
+var front = ["html","css","javascript"];
+var back = ["java","php","python"];
+
+front = front.concat(back);
+console.log(front);
+//resultado será um array com os elementos de dois arrays
+
+>join()--O método "join()" puxa elementos de um array e lista no formato de string.
+
+var front = ["html","css","javascript"];
+front =front.join("-");
+
+console.log(front);
+//resultado será as propriedades do array
+//separar com um traço 
+
+push()-- serve para adicionarmos elementos no final do array.
+
+var front = ["html","css","javascript"];
+front.push("react");
+
+console.log(front);
+// resultado será um novo elemento no final do array
+
+pop()-- remove o último elemento de um array.
+
+var front = ["html","css","javascript"];
+front.pop();
+
+console.log(front);
+//resultado será a remoção do último elemento do array 
+
+shift()-- remove o primeiro elemento de um array.
+
+var front= ["html","css","javascript"];
+front.shift();
+console.log(front);
+// resultado será a remoção do primeiro elemento do array
+
+reverse()-- inverte a ordem dos elementos do array.
+
+var front = ["html","css","javascript"];
+front.reverse();
+
+console.log(front);
+//resultado será reversão dos elementos do array
+
+LOOPS 
