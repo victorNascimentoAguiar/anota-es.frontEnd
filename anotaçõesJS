@@ -305,3 +305,217 @@ console.log(front);
 //resultado será reversão dos elementos do array
 
 LOOPS 
+Laços de repetições ou loops como o próprio nome diz, ele faz com que
+blocos de códigos sejam repetidos diversas vezes até que certa condição seja cumprida.
+
+Um loop geralmente possui um ou mais dos sequintes itens :
+>O contator, que é inicializado com um certo valor - este é o ponto inicial do loop.
+>A condição de saída,que é o critério no qual o loop para - geralmente
+o contador atinge um certo valor.
+>a expressão, que geralmente incrementa o contador em uma pequena quantidade a cada loop sucessivamente até atingir a 
+condição de saida.
+
+FOR 
+
+O primeiro que você usará na maior parte do tempo, é o loop for, ele tem a sequinte sintaxe:
+
+for (inicializador";"condição";" expressão) {
+
+    //não é nessario o usso da aspas apenas o ponto e virgula
+    //código que será executado
+}
+
+no emplo temos:
+>A  palavra-chave for , sequido por parênteses.
+>Dentro do parênteses temos três itens, separados por ponto e vírgula:
+
+>o inicializador - geralmente é uma variável configurada para um número,que é incrementado para contar o número de vezes que o loop foi executado.É também por vezes referido como uma variável
+de contador.
+>A condição - como mencionado anteriormente, aqui é definido quando o loop deve parar de executar.Geralmente, essa é uma expressão que apresenta um operador de comparação, um teste para
+verificar se a condição de saída foi atendida.
+>A expressão- isso sempre é avaliado (ou executado) cada vez que o loop passou por uma iteração completa.Geralmente serve para incrementar (ou, em alguns casos,decrementar) a variável do contador, aprimando-a
+do valor da condição dde saída.
+
+FOR NA PRÁTICA
+
+for (let i= 1";" i <= 5";" i++){
+console.log(i);
+//saída : 1,2,3,4,5
+}
+
+WHILE
+
+funciona de uma maneira muito semelhante ao loop for,
+exceto que a variável iniciadora é definida antes do loop, e a expressão final é incluída dentro do loop após o código a ser executado-em vez de esses itens serem incluidos dentro dos parênteses.
+A condição de saída está incluída dentro dos parênteses, que são precendidos pela palavra-chave while e não for.
+
+
+inicializador;
+while (condição){
+    //código
+    expressão;
+}
+
+DO WHILE
+
+inicializador;
+do{
+    //código
+    expressão;
+}while (condição);
+
+Nesse caso , a condição é avaliada depois que o bloco de código é executado, ou seja, o código dentro do "do" será executado pelo menos 
+uma vez antes de ter certeza que a condição é verdadeira.
+
+
+DOM 
+o document object Model (DOM)é uma interface de programação para os documentos HTML e XML. Representa a página de forma que os programas possam alterar a estrutura do documento, altera o estilo e conteúdo. O DOM representa o documento com nós e objetos, dessa
+forma, as linguagens de programação podem se conectar à página.
+
+EVENTOS NO JAVASCRIPT
+os eventos são ações que são realizadas em um determinado elemento da página, seja ele um exto ou uma imagem, por exemplo.Muitas das interações do usuário que está visitando sua pagina com o conteúdo do seu site podem ser consideradas eventos.
+
+PRINCIPAIS EVENTOS:
+>onload: Disparado quando documento é carregado.
+>onunload:Disparado quando documento é descarregado de janela ou de frame.
+>onsubmit: Disparado quando formulário é "limpado" via botão de rest.
+>onreset:Disparado quando formulário é selecionado numa área de entrada de texto.
+>onchange: Disparado quando elemento perde o foco e foi modificado.
+>onclick:Disparado quando botão de formulário é selecionado cia click do mouse.
+>onfocus:Disparado quando o elemento recebe foco: clicando o mouse dentro do elemento ou entrando no mesmo via Tab.
+>ondblclick:Disparado quando ocorre um click duplo do mouse.
+>onmousedown:Disparado quando mouse é pressionado enquanto está sobre um elemento.
+>onmouseup:Disparado quando mouse é desprecionado.
+>onmouseover:Disparado quando cursor do mouse é movido sobre elementos.
+>onmouseout:Disparado quando mouse é movido fora do elemento onde estava .
+>onkeydown: Disparado quando tecla é pressionada.
+
+Existem diversas maneiras de se aplicar esses eventos aos elementos 
+HTML,são elas:
+>Inline
+>Em um arguivo externo,usando um manipulador de eventos.
+
+
+Usar a maneira de arguivo externo deixa nosso documento HTML limpo de código
+JavaScript. já com inline,aplicamos diretamente na tag HTML o evento JavaScripr.
+
+<button onclick ="alert('oi')">
+sou um evento inline
+</button>
+
+mesmo codigo so que no javaScript 
+
+document.querySelector("button").addEventListener("click", () >{
+    alert("oi");
+});
+
+SELECIONANDO ELEMENTOS HTML
+
+Seletores são métodos que selecionam tags HTML (e seu conteúdo),
+seja pelo id,class ou pela própria tag.Isso é muito útil quando queremos alterar a DOM,seja adicionando novos elementos ou alterando o que já existe nela. 
+Veremos os sequintes métosos:
+
+>getElementByld()
+Este método retorna um elemento correspondente ao id
+passado como parâmetro. EX:
+
+let efront = document.getElementByid("anotação");
+
+>getElementByClassName
+retorna os elementos que possuem uma mesma classe passada.
+
+let eFront = document.getElementsByClassName("anotação");
+
+enquanto a função anterior retorna um único elemento, está retorna uma HTMLColection (uma coleção) de elementos.
+
+>querySelector()
+Este método utiliza "." para indicar a seleção de uma classe, "#" para indicar seleção de ids ou a própria tag.
+
+let teste1 = document.querySelector("#souId");
+let teste2 = document.querySelector(".souClass");
+let teste3 = document.querySelector("div");
+
+Só retorna o primeiro elemento encontrado que tem a mesma seleção.
+
+>querySelectorAll()
+similar ao querySelector() que também utiliza os seletores do CSS, porém retorna uma NodeList com todos os elementos
+que correspondem ao seletor criado.
+
+let teste = document.querySelectorll("div");
+//irá retornar todas as divs da página
+
+INTERAÇÔES DO USUÁRIO
+
+Existem duas formas comuns (existem outras formas) de adicionar 
+estilos CSS em nossa página com JavaScript:
+>estilo inline.
+>classes CSS a elementos.
+
+A propriedade style em JS retorna o estilo de um elemento na
+forma de um objeto CSSStyleDeclaration que contém uma lista de todas as propriedades de estilos. Dessa forma conseguimos adicionar estilos CSS em nossa aplicação através do JavaScript.
+
+var button = document.querySelector("button");
+button.addEventListener("click", () > {
+    button.style.backgroundColor = "red";
+});
+
+Dessa forma adicionamos backgroud-color do CSS em nosso botão de forma de estilos inline. Mas veja isso leva a um problema que tivemos com JavaScript dentro do HTML.
+
+ADICIONANDO CLASSES CSS NOS ELEMENTOS
+Utilizando a propriedade classList você pode obter, definir ou remover classes CSS facilmente de um elemento. O exemplo a sequir mostrará
+como adicionar um classe chamada "outraCor" em um elemento <div>
+com id="victor".
+
+var elementoDiv = document.getElementById("victor");
+elementoDiv.addEventListener("click",()> {
+    elementoDiv.classList.toggle("outraCor");
+});
+
+addEventListener
+também conhecido como evento escuta permite configurar funções a serem chamadas quando um evento
+acontece, que em nosso exemplo,quando um usuário clica em um botão.
+No exemplo a sequir mostra que o elemento nomeElemento está sendo escutado caso o usuário faça um click.
+
+sintaxe do addEventListener:
+
+alvo.addEventListener(evento,função);
+
+>alvol:é o elemento HTML ao qual você deseja adicionar os eventos.
+>evento:é onde voce especifica qual é o tipo de evento que irá
+dispara a ação/função.Uma coisa interessante no evento é que diferente do JavaScript no HTML,ele não tem o "on" dos evento
+como onclick, onchange,onblur....
+>Função:específica a função a ser executada quando o evento é detectado.
+
+AXIOS
+é uma biblioteca JS baseada em promessas (promises)
+para interceptar requisições(request) HTTP.Esses interceptadores são
+úteis quando queremos pegar ou altera requisições HTTP.Cada requisição HTTP pode ser usar um dos métodos de requisição existente,existem 7 tipos 
+um deles é o GET para consultar os dados em uma API.
+
+A primeira coisa a se fazer quando estamos trabalhando com uma biblioteca ou framework,é procurar o CDN da biblioteca para importa-lá
+em nossa aplicação 
+
+<script 
+    src="https://cdn.jsdelivr.net/npm/axios/dist/acios.min.js">
+</script>
+<script src="main.js"></script>
+
+dessa forma temos acesso aos recursos do axios.
+
+ADICIONANDO A API
+utilizando a api de usuário do GITHUB.
+axios.get("https://api.github.com/users/victorNascimentoAguiar");
+
+primeiro, você importa o Axios para que possa ser usado na aplicação.
+em sequida,executa uma requisição utilixando o GET através do método get() para obter uma promessa que retorna um objeto de resposta que pode ser sucesso ou erro,dependendo da resposta da API.
+
+axios
+.get("https://api.github.com/users/victorNascimentoAguiar");
+.then(function (response){
+    console.log(response.data);
+    console.log(resonse.data.login);
+
+})
+.catch(function (error){
+    console.log(error);
+})
